@@ -1,4 +1,7 @@
-body { font-family: Arial, Helvetica, sans-serif; background: linear-gradient(315deg,black,white); background-attachment: fixed; } 
+body { font-family: Arial, Helvetica, sans-serif;background-color: #b3cdd1;background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);background-attachment: fixed; } 
+
+
+
 
 
 .mainContainer { display: table; width: 100%; } 
@@ -7,7 +10,7 @@ body { font-family: Arial, Helvetica, sans-serif; background: linear-gradient(31
 
 .marginAuto { max-width: 665px; margin: 0 auto; } 
 
-#display { position: relative; width: 100px; height: 100px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 5px; margin-left: 279px; margin-bottom: 20px; } 
+#display { background: white; box-shadow: 5px 5px 10px; position: relative; width: 100px; height: 100px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 5px; margin-left: 279px; margin-bottom: 20px; } 
 
 #escolhas { margin-bottom: 20px; } 
 
@@ -17,16 +20,16 @@ ul { padding-left: 0px; display: flex; flex-wrap: wrap; list-style-type: none; m
 
 li { margin-left: 5px; } 
 
-#valor { height: 100%; } 
+#valor { height: 100%;box-shadow: 5px 5px 10px black; } 
 
-#ok { height: 35px; cursor: pointer; } 
-#reload { height: 35px; cursor: pointer; } 
+#ok { height: 35px; cursor: pointer; box-shadow: 5px 5px 10px black;} 
+#reload { height: 35px; cursor: pointer;box-shadow: 5px 5px 10px black; } 
 
 #corpo { height: 30px; display: flex; justify-content: center; margin-bottom: 20px; margin-left: 56px; } 
 
 #start { margin-bottom: 20px; } 
-#comeca { background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } 
+#comeca { box-shadow: 5px 5px 10px black;background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } 
 
-#vidas { border: 1px solid; border-radius: 4px; width: 69px; height: 21px; } 
+#vidas { background: white; border: 1px solid; border-radius: 4px; width: 69px; height: 21px; box-shadow: 5px 5px 10px;} 
 
-#message { font-size: xx-large; border-radius: 4px; } 
+#message { box-shadow: 5px 5px 10px black; font-size: xx-large; border-radius: 4px; } 

@@ -40,16 +40,15 @@ btn.addEventListener('click', () => {
         message.style.padding = "5px";
         message.style.color = "white";
         message.style.background = "green";
+        display.style.background = "green";
         display.innerHTML = `<span id="numero">${nb}</span>`;
 
         if (vlInput.value.length === 3) {
             display.style.width = "212px";
             display.style.marginLeft = "227px";
-            display.style.background = "green";
         } else if (vlInput.value.length === 2) {
             display.style.width = "154px";
             display.style.marginLeft = "254px";
-            display.style.background = "green";
         }
     } else {
 
