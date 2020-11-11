@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Adivinhe o número</title>
+</head>
+
+<body>
+    <div id="vidas">
+        <ul id="tentativas"> 
+            <li class="vida"><img src="img/heart.png" alt="vida" title="vida"></li>
+            <li class="vida"><img src="img/heart.png" alt="vida" title="vida"></li>
+            <li class="vida"><img src="img/heart.png" alt="vida" title="vida"></li>
+        </ul>
+    </div>
+    <main class="mainContainer">
+        <div class="centralizar">
+            <div class="marginAuto">
+                <h2>Adivinhe o número</h2>
+                <div id="display">
+                    <img src="img/sinal-de-interrogacao.png" alt="adivinhe" alt="adivinhe">
+                </div>
+                <div id="escolhas">
+                    <label>Escolha a dificuldade:</label>
+                    <label for="facil" title="0-10">Fácil</label>
+                    <input type="radio" name="nivel" id="facil"  title="0-10" value="11">
+                    <label for="facil" title="0-50">Médio</label>
+                    <input type="radio" name="nivel" title="0-50" id="medio" value="51">
+                    <label for="facil" title="0-100">Difícil</label>
+                    <input type="radio" name="nivel" title="0-100" id="dificil" value="101">
+                </div>
+                <div id="start">
+                    <button id="comeca" onclick="escolheNivel()">Começar</button>
+                </div>
+                <div id="corpo">
+                    <input type="text" name="valor" id="valor"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <button id="ok" onclick="escolheNivel()"><img src="img/right.png" alt="confirma" title="confirma"></button>
+                    <button id="reload" ><img src="img/reload.png" alt="reload" title="reiniciar"></button>
+                </div>
+            
+                    <span id="message"></span>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
