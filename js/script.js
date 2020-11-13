@@ -1,18 +1,12 @@
-let nb = null;
 let cont = 0;
-let display = document.querySelector('#display');
-let vlInput = document.querySelector('#valor');
-let nivel = document.getElementsByName('nivel');
-let btn = document.querySelector('#ok');
 let corpo = document.querySelector('#corpo');
-let vida = document.querySelectorAll('#tentativas');
-let message = document.querySelector('#message');
-let reload = document.querySelector('#reload');
 
 reload.style.visibility = 'hidden';
 corpo.style.display = 'none';
 
 const escolheNivel = () => {
+    let nivel = document.getElementsByName('nivel');
+    let nb = null;
     if (nb === null) {
         for (let i = 0; i < nivel.length; i++) {
             if (nivel[i].checked) {
@@ -23,17 +17,19 @@ const escolheNivel = () => {
     }
 }
 
-btn.addEventListener('click', () => {
-    verificaVazio(vlInput);
-    verificaNumero(vlInput, nb);
+document.querySelector('#ok').addEventListener('click', () => {
+    let vlInput = document.querySelector('#valor');
+    let message = document.querySelector('#message');
+    verificaVazio(vlInput,message);
+    verificaNumero(vlInput, escolheNivel(),message);
 })
 
-reload.addEventListener('click', () => {
+document.querySelector('#reload').addEventListener('click', () => {
     window.location.reload()
 })
 
 
-const verificaVazio = (e) => {
+const verificaVazio = (e,message) => {
     if (e.value === '') {
         message.innerHTML = "DIGITE UM NÚMERO!";
         message.style.padding = "5px";
@@ -44,15 +40,19 @@ const verificaVazio = (e) => {
 }
 
 
-const verificaNumero = (numero, nSorteado) => {
+const verificaNumero = (numero, nSorteado,msg) => {
+    let reload = document.querySelector('#reload');
+    let display = document.querySelector('#display');
+    let vida = document.querySelectorAll('#tentativas');
     if (parseInt(numero.value, 10) === nSorteado) {
-        ganhou(numero, nSorteado);
+        ganhou(numero, nSorteado,msg,reload,display);
     } else {
-        perdeu(numero, nSorteado);
+        perdeu(numero, nSorteado,msg,reload,display,vida);
     }
 }
 
-const ganhou = (e, nS) => {
+const ganhou = (e, nS,message,reload,display) => {
+  
     reload.style.visibility = 'visible';
     message.innerHTML = "PARABÉNS VOCÊ GANHOU!";
     message.style.padding = "5px";
@@ -70,8 +70,7 @@ const ganhou = (e, nS) => {
     }
 }
 
-const perdeu = (e, nS) => {
-
+const perdeu = (e, nS,message,reload,display,vida) => {
     if (parseInt(e.value, 10) > nS) {
         message.innerHTML = "NÚMERO DIGITADO É MAIOR";
         message.style.padding = "5px";
